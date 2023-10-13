@@ -1,0 +1,21 @@
+<h3>Users List</h3>
+<div class="table-responsive">
+  <!-- Add this class for responsiveness -->
+  <table class="table table-bordered table-striped">
+    <!-- Add Bootstrap table classes -->
+    <thead>
+      <tr>
+        <th>S. No</th>
+        <th>User name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userlist; index as i">
+        <td>{{ i + 1 }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
