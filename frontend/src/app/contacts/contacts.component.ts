@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthServiceService } from '../services/auth-service.service';
-import { User } from '../model/User';
+// import { User } from '../model/User';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contacts',
@@ -9,11 +10,12 @@ import { User } from '../model/User';
 })
 export class ContactsComponent implements OnInit {
   userlist: any;
-
-  constructor(private auth: AuthServiceService) {}
+  isUserAuthorized: boolean = false;
+  constructor(private auth: AuthServiceService, private route: Router) {}
 
   ngOnInit(): void {
     this.viewUsers();
+    // this.isUserAuthorized = this.route.snapshot.queryParamMap.get('data')
   }
 
   viewUsers() {

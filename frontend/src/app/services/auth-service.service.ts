@@ -16,7 +16,12 @@ export class AuthServiceService {
     });
   }
 
-  loginUser() {}
+  loginUser(email: string, password: string) {
+    return this.http.post('http://localhost:5001/api/users/login', {
+      email,
+      password,
+    });
+  }
 
   fetchUsers() {
     return this.http.get('http://localhost:5001/api/users/viewusers');

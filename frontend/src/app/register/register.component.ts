@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthServiceService } from '../services/auth-service.service';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
-  constructor(private auth: AuthServiceService) {}
+  constructor(private auth: AuthServiceService, private route: Router) {}
   username: string = '';
   email: string = '';
   password: string = '';
@@ -19,6 +20,7 @@ export class RegisterComponent {
       .subscribe((res) => {
         console.log(res);
       });
+    this.route.navigate(['/']);
     this.username = '';
     this.email = '';
     this.password = '';
