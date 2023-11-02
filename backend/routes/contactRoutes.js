@@ -6,6 +6,8 @@ const {
   deleteContact,
   createContact,
 } = require("../controllers/contactController.js");
+
+
 const validateToken = require("../middleware/validateTokenHandler.js");
 const contactRoutes = express.Router();
 
@@ -16,6 +18,7 @@ contactRoutes
   .get(getContact)
   .put(updateContact)
   .delete(deleteContact);
+
 // contactRoutes.route("/").get(getContacts);
 
 // contactRoutes.route("/").post(createContact);

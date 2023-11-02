@@ -1,0 +1,59 @@
+/* .contacts-nav-bar {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+} */
+table {
+  width: 100%;
+}
+.contacts-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3498db; /* Background color */
+  color: #fff; /* Text color */
+  padding: 10px 20px; /* Padding for spacing */
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+}
+
+h3 {
+  margin: 0; /* Remove default margin for the heading */
+  font-size: 1.5rem; /* Adjust the font size */
+}
+
+button {
+  background-color: #e74c3c; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+
+  /* Hover effect */
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #c0392b; /* Hover color */
+}
+
+.mat-mdc-row .mat-mdc-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+  font-weight: 400;
+}

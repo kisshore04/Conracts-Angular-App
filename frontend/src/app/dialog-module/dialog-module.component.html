@@ -1,0 +1,20 @@
+<h4 mat-dialog-title>Fav Animal</h4>
+<div mat-dialog-content>
+  <ul>
+    <li>
+      <!-- <span ngIf="data.animal === 'cat'"></span> -->
+      <span *ngIf="data.animal === 'cat'">&#10003;</span>
+      <span>cat</span>
+    </li>
+    <li>
+      <span *ngIf="data.animal === 'dog'">&#10003;</span>
+
+      <span>Dog</span>
+    </li>
+    <li>
+      <span *ngIf="data.animal === 'leo'">&#10003;</span>
+
+      <span>Hyena</span>
+    </li>
+  </ul>
+</div>

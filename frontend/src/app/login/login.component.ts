@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthServiceService } from '../services/auth-service.service';
 import { Router } from '@angular/router';
+import { UserAuthenticatedService } from '../services/user-authenticated.service';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  constructor(private auth: AuthServiceService, private route: Router) {}
+  constructor(
+    private auth: AuthServiceService,
+    private route: Router,
+    private userAuthenticate: UserAuthenticatedService
+  ) {}
   email: string = '';
   password: string = '';
 
@@ -20,5 +25,6 @@ export class LoginComponent {
     this.route.navigate(['/contacts'], { queryParams: { data: 'true' } });
     this.email = '';
     this.password = '';
+    this.userAuthenticate.checkUserAuthenticity();
   }
 }
